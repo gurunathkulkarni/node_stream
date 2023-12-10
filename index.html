@@ -1,0 +1,27 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTSP Stream</title>
+</head>
+
+<body>
+    <h1>RTSP Stream</h1>
+    <script src="https://unpkg.com/node-rtsp-stream-client/dist/browser/rtsp.min.js"></script>
+    <script>
+        const player = new rtsp.Player({
+            useWorker: true,
+            useWorkerDecoder: true,
+            workerSrc: 'https://unpkg.com/node-rtsp-stream-client/dist/browser/rtsp-worker.min.js',
+            videoElement: document.createElement('video'),
+            url: 'ws://localhost:9999/stream1', // WebSocket URL from your RtspStream instance
+        });
+
+        document.body.appendChild(player.videoElement);
+    </script>
+</body>
+
+</html>
