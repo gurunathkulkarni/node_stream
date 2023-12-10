@@ -12,6 +12,8 @@ const rtspStream = new RtspStream({
   wsPort: 9999,
 });
 
+console.log("rtspStream", rtspStream);
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
