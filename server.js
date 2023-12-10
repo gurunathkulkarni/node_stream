@@ -14,6 +14,10 @@ const rtspStream = new RtspStream({
 
 console.log("rtspStream", rtspStream);
 
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
